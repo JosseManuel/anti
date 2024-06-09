@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <header>
+        <h1><font color="white">Tienda de Antigüedades</font></h1>
+        <h2>M E X I C O</h2>
+      
+    </header>
+    
+    <form>
+        <label><h2>Detalles del cliente</h2></label>
+        <label for="nombre1">Nombre:</label>
+        <input type="text" id="nombre1" name="nombre1" required><br>
+        <label for="nombre1">Apellido:</label>
+        <input type="text" id="nombre1" name="nombre1" required><br>
+        <label for="telefono">Teléfono:</label>
+        <input type="tel" id="telefono" name="telefono" pattern="\d{10}" title="Por favor, ingrese un número de teléfono válido de 10 dígitos." required><br>
+        <label for="correo">Correo Electrónico:</label>
+        <input type="email" id="correo" name="correo" required><br>
+
+    </form>
+    <form>
+
+    </form>
+    <form action="procesar_registro.php" method="post">
+        <label><h2>Pago</h2></label>
+        <label for="nombre">Nombre del Titular:</label>
+        <input type="text" id="nombre" name="nombre" required><br>
+
+        <label for="numeroTarjeta">Número de Tarjeta:</label>
+        <input type="text" id="numeroTarjeta" name="numeroTarjeta" pattern="\d{16}" title="Por favor, ingrese un número de tarjeta válido de 16 dígitos." required><br>
+
+        <label for="fechaVencimiento">Fecha de Vencimiento (MM/AA):</label>
+        <input type="text" id="fechaVencimiento" name="fechaVencimiento" pattern="\d{2}/\d{2}" title="Por favor, ingrese la fecha de vencimiento en el formato MM/AA." required><br>
+
+        <label for="cvv">Código de Seguridad (CVV):</label>
+        <input type="text" id="cvv" name="cvv" pattern="\d{3}" title="Por favor, ingrese un código de seguridad válido de 3 dígitos." required><br>
+    </form>
+</body>
+</html>

@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contraseña formulario </title>
+<style>
+    header {
+    background-color: black;
+    padding: 5px 0;
+    display: flex;
+    justify-content:center;
+    align-items: center;
+}
+
+header h1 {
+    color: white;
+    font-size: 2em; 
+    margin: 0; 
+    margin-bottom: 5px; 
+
+}
+
+header h3 {
+    color: white;
+    font-size: 1em; 
+    margin: 0; 
+    letter-spacing: 5px; 
+
+}
+.bandera {
+    display: flex;
+    height: 1px; 
+    margin-bottom: 10px; 
+}
+
+.bandera div {
+    flex-grow: 1;
+}
+
+.verde {
+    background-color: #006847;
+}
+
+.blanco {
+    background-color: #ffffff; 
+}
+
+.rojo {
+    background-color: #ce1126;
+}
+body {
+font-family: Arial, sans-serif;
+text-align: center;
+background-color: #0D0D0D;
+margin: 0;
+    padding: 0;
+}
+h2 {
+    color: #fff;
+}
+#password-form {
+margin-top: 100px;
+}
+input[type="password"] {
+padding: 10px;
+font-size: 16px;
+border-radius: 5px;
+border: 1px solid #ccc;
+margin-bottom: 20px;
+}
+input[type="submit"] {
+padding: 10px 20px;
+font-size: 16px;
+background-color: black;
+color: #fff;
+border: none;
+border-radius: 5px;
+cursor: pointer;
+}
+input[type="submit"]:hover {
+background-color: #1F1F1F;
+}
+</style>
+</head>
+<body>
+    <header>
+
+        <div>
+            <h1><font color="white">Tienda de Antigüedades</font></h1>
+            <div class="bandera">
+                <div class="verde"></div>
+                <div class="blanco"></div>
+                <div class="rojo"></div>
+            </div>
+            <h3>M É X I C O</h3>
+        </div>
+    </header>
+<h2>Ingrese la Contraseña para acceder a esta pagina privada</h2>
+<form id="password-form">
+<input type="password" id="password" placeholder="Ingrese la contraseña">
+<br><input type="submit" value="Ingresar">
+</form>
+<div id="message"></div>
+<script>
+document.getElementById("password-form").addEventListener("submit", function(event) {
+event.preventDefault();
+var password = document.getElementById("password").value;
+if (password === "123") {
+    window.location.replace("Tiendaa.html");
+
+} else {
+document.getElementById("message").innerHTML = alert("¡Contraseña incorrecta Intente nuevamente.");
+;
+}
+})
+</script>
+
+
+
+<h1><font color="white">Cambiar Color de Fondo de la Página</font></h1>
+<form onsubmit="event.preventDefault(); enviarFormulario();">
+    <label for="color"><font color="white">Selecciona un color:</font></label>
+    <input type="color" id="color" name="color">
+    <button type="submit">Cambiar Color de Fondo</button>
+</form>
+
+<script>
+    function enviarFormulario() {
+        var colorSeleccionado = document.getElementById("color").value;
+        document.body.style.backgroundColor = colorSeleccionado;
+        alert("Color seleccionado: " + colorSeleccionado);
+    }
+</script>
+</body>
+</html>

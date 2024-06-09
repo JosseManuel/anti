@@ -1,0 +1,830 @@
+<!DOCTYPE html>
+<html lang="es">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Mi Empresa</title>
+        <style>
+       body {
+        background-color: #1F1F1F;
+    overflow-x: hidden; 
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-image: url('background-pattern.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    color: #333;
+}
+
+
+header {
+    background-color: black;
+    padding: 5px 0;
+    display: flex;
+    justify-content:left;
+    align-items: center;
+}
+
+header h1 {
+    color: white;
+    font-size: 2em; 
+    margin: 0; 
+    margin-bottom: 5px; 
+
+}
+
+header h3 {
+    color: white;
+    font-size: 1em; 
+    margin: 0; 
+    margin-left: 90px; 
+    letter-spacing: 5px; 
+
+}
+
+.bandera {
+    display: flex;
+    height: 1px; 
+    margin-bottom: 10px; 
+}
+
+.bandera div {
+    flex-grow: 1;
+}
+
+.verde {
+    background-color: #006847;
+}
+
+.blanco {
+    background-color: #ffffff; 
+}
+
+.rojo {
+    background-color: #ce1126;
+}
+
+
+nav {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start; 
+    margin-left: 800px; 
+}
+
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+    display: flex;
+    justify-content: flex-start; 
+    margin-left: 20px; 
+    align-items: center; 
+    
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none; 
+    font-size: 18px;
+    margin-left: 15px; 
+    transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+    color: green;
+    text-decoration: none; 
+}
+
+
+
+
+
+
+.articulos {
+    list-style-type: none;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+.articulos h3{
+    text-align: center;
+}
+.articulos li {
+    margin: 10px;
+    text-align: left;
+    flex: 1 0 calc(33.33% - 20px); 
+    background-color: #000; 
+    color: #fff; 
+    transition: background-color 0.3s ease; 
+    position: relative; /* Añadido para posicionar absolutamente los elementos internos */
+}
+
+.articulos li img {
+    max-width: 200px; 
+    max-height: 200px; 
+    width: auto; 
+    height: auto;
+    float: left; /* Asegura que la imagen flote a la izquierda */
+    margin-right: 10px; /* Espacio entre la imagen y la descripción */
+    margin-left: 10px;
+    margin-bottom: 10px;
+}
+
+.articulos li.descripcion {
+    position:absolute; /* Posiciona absolutamente la descripción */
+    top: 0;
+    left: 210px; /* Ajusta según el tamaño de la imagen y el margen */
+    width: calc(100% - 210px); /* Ajusta según el tamaño de la imagen y el margen */
+}
+
+.articulos li.precio-boton {
+    position: absolute; /* Posiciona absolutamente el precio y el botón */
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    text-align: left; /* Centra el texto */
+}
+
+.articulos li.precio-boton button {
+    margin-top: 10px; /* Espacio entre el precio y el botón */
+}
+
+.articulos li:hover {
+    background-color: #444;
+}
+
+
+
+
+
+
+
+
+
+form input, form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+}
+
+form button {
+    padding: 10px 20px;
+    background-color: #333;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+form button:hover {
+    background-color: #444;
+}
+
+footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 10px 0;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+.Formcolor{
+    background-color:black; 
+}
+
+
+
+#formulario-pago {
+        width: 400px;
+        margin: 50px auto;
+        padding: 20px;
+        background-color: #fff;
+        box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        border-radius: 10px;
+        transition: transform 0.3s ease-in-out;
+    }
+   .h2-formulario {
+        text-align: center;
+        margin-bottom: 20px;
+    }
+    form {
+        display: flex;
+        flex-direction: column;
+    }
+    input[type="text"], input[type="date"], select {
+        margin-bottom: 10px;
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        width: 100%;
+        box-sizing: border-box;
+        transition: border-color 0.3s ease-in-out;
+    }
+    input[type="text"]:focus, input[type="date"]:focus, select:focus {
+        border-color: #007BFF;
+    }
+    label {
+        margin-bottom: 5px;
+    }
+    button[type="submit"], input[type="button"] {
+        padding: 10px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        background-color: #007BFF;
+        color: #fff;
+        margin-top: 20px;
+        width: 100%;
+        box-sizing: border-box;
+        transition: background-color 0.3s ease-in-out;
+    }
+    button[type="submit"]:hover, input[type="button"]:hover {
+        background-color: #0056b3;
+    }
+    input[type="button"] {
+        background-color: #f0ad4e;
+        color: #fff;
+        margin-left: 10px;
+    }
+   
+
+
+
+
+
+
+
+
+
+
+   
+     #contacto {
+            padding: 20px; 
+            border: 1px solid #ccc; 
+            border-radius: 5px; 
+            margin: 200px auto;
+            max-width: 600px; 
+        }
+
+#contacto h2 {
+    text-align: center;
+    font-size: 24px; 
+    font-weight: bold; 
+    margin-bottom: 20px; 
+}
+
+   
+        #contacto form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        #contacto form input,
+        #contacto form textarea {
+            margin-bottom: 10px; 
+            padding: 10px; 
+            border: 1px solid #ccc; 
+            border-radius: 3px; 
+            box-sizing: border-box;
+            width: 600px;
+        }
+
+        #contacto form button {
+            padding: 10px 20px;
+            background-color: #007BFF; 
+            color: white; 
+            border: none; 
+            border-radius: 3px; 
+            cursor: pointer; 
+        }
+
+        #contacto form button:hover {
+            background-color: #0056b3; 
+        }
+ 
+        
+
+
+
+
+        #sobre {
+    padding: 20px; 
+    border: 1px solid #ccc; 
+    border-radius: 5px; 
+    margin: 20px auto; 
+    max-width: 1460px; 
+    background-color: #f9f9f9; 
+}
+
+#sobre h2 {
+    text-align: center; 
+    font-size: 24px;
+    font-weight: bold; 
+    margin-bottom: 20px; 
+    margin-top: 20px;
+}
+
+#sobre .sobre-texto .parrafo-contenedor p {
+    text-align: justify;
+    line-height: 1.6;
+    margin-bottom: 20px; 
+    font-size: 20px; 
+}
+
+#sobre .sobre-container {
+    display: flex;
+    justify-content: space-between; 
+    flex-wrap: wrap; 
+}
+
+#sobre .sobre-texto, #sobre .sobre-video {
+    flex: 1; 
+}
+
+#sobre .sobre-video {
+    margin-left: 50px; 
+    margin-top: 20px; 
+    margin-bottom: 20px;
+}
+
+#audio{
+   margin-left: 200px;
+}
+          #carrito {
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            margin: 20px auto;
+            max-width: 600px;
+            background-color: #f9f9f9;
+            color: #333;
+        }
+        #carrito h2 {
+            text-align: center;
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 20px;
+            color: #333;
+        }
+        #lista-carrito {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+        }
+        #lista-carrito li {
+            padding: 10px;
+            border-bottom: 1px solid #ccc;
+            margin-bottom: 10px;
+            background-color: #fff;
+            color: #333;
+        }
+        #lista-carrito li:last-child {
+            border-bottom: none;
+        }
+        #carrito button {
+            display: block; 
+            width: 100%; 
+            padding: 10px; 
+            margin-top: 10px;
+            border: none; 
+            border-radius: 5px;
+            background-color: #007BFF; 
+            color: white; 
+            cursor: pointer; 
+        }
+
+        #carrito button:hover {
+            background-color: #0056b3; 
+        }
+ 
+
+        #tienda h2{
+            color: #fff;
+            text-align: center;
+        }
+        #tienda h1{
+            color: #fff;
+            text-align: left;
+        }
+        #hora{
+            color: #fff;
+            margin-left: 60px;
+        }
+
+        </style>  
+        
+        <script>
+            function mostrarHora() {
+              var fecha = new Date();
+              var hora = fecha.getHours();
+              var minutos = fecha.getMinutes();
+              var segundos = fecha.getSeconds();
+              var formatoHora = hora + ":" + minutos + ":" + segundos;
+              document.getElementById("hora").innerText = formatoHora;
+            }
+            setInterval(mostrarHora, 1000);
+            mostrarHora();
+            </script>    
+    </head>
+    <body>
+        <header>
+
+            <div>
+                <h1><font color="white">Tienda de Antigüedades</font></h1>
+                <div class="bandera">
+                    <div class="verde"></div>
+                    <div class="blanco"></div>
+                    <div class="rojo"></div>
+                </div>
+                <h3>M É X I C O</h3>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#tienda">Tienda</a></li>
+                    <li><a href="#sobre">Nosotros</a></li>
+                    <li ><a href="#contacto">Contacto</a></li>
+                    <li><a href="#carrito"><img src="carro.png" width="50" height="50"></a></li>
+                </ul>
+            </nav>
+        </header>
+        
+        <main>
+            <section id="tienda">
+                <h2>Artículos en Venta</h2>
+                <h1>La hora actual es:</h1>
+<p id="hora"></p>
+
+                <ul class="articulos">
+            
+                    <li>
+                        <h3>Malacates</h3>
+                        <img src="https://www.3museos.com/wp-content/uploads/2020/09/malacates1.jpg" alt="Artículo 1">
+                        <p>Mesoamérica<br>
+                            Arcilla<br>
+                            Colección Secretaría de Cultura-INAH</p>
+                            <span class="precio">$100Mxn</span><br>
+                            <button class="agregar-al-carrito">Agregar al carrito</button>
+                        
+                    </li>
+                    <li>
+                        <h3>Almena</h3>
+                        <img src="https://www.3museos.com/wp-content/uploads/2015/07/ma_31_almena-605x1024.jpg" alt="Artículo 2">
+                        <p>
+                            Almena<br>
+                            Cultura Mexica<br>
+                            Periodo posclásico tardío 1325-1521 d. C.<br>
+                            Arcilla modelada y al pastillaje<br>
+                            168 x 109 x 12.5 cm.<br>
+                            Colección Museo del Templo Mayor, CONACULTA-INAH</p>
+                            <span class="precio">$100Mxn</span><br>
+                            <button class="agregar-al-carrito">Agregar al carrito</button>
+                    </li>
+                    <li>
+                        <h3>Xiuhcóatl, serpiente de fuego</h3>
+                        <img src="https://www.3museos.com/wp-content/uploads/2015/07/ma_30_xiuhcoatl-1024x685.jpg" alt="Artículo 3">
+                        <p>Xiuhcóatl, serpiente de fuego<br>
+                            Procedente del Estado de México<br>
+                            Periodo posclásico tardío<br>
+                            1300-1521 d. C.<br>
+                            Piedra tallada<br>
+                            72 x 59 x 186 cm.<br>
+                            Colección CONACULTA-INAH-MEX</p>
+                            <span class="precio">$100Mxn</span><br>
+                            <button class="agregar-al-carrito">Agregar al carrito</button>
+                    </li>
+                    <li>
+                        <h3>Ehécatl</h3>
+                        <img src="https://www.3museos.com/wp-content/uploads/2015/07/ma_29_ehecatl-685x1024.jpg" alt="Artículo 4">
+                        <p>Dios del viento y segundo signo del calendario <br>
+                            ritual de 260 días o tonalpohualli<br>
+                            Cultura Mexica<br>
+                            Periodo posclásico tardío 1250-1521 d. C.<br>
+                            Arcilla modelada<br>
+                            17.3 x 9.3 x 6 cm.<br>
+                            Colección CONACULTA-INAH-MEX</p>
+                            <span class="precio">$100Mxn</span><br>
+                            <button class="agregar-al-carrito">Agregar al carrito</button>
+                    </li>
+                    <li>
+                        <h3>Chicomecóatl</h3>
+                        <img src="https://www.3museos.com/wp-content/uploads/2015/07/ma_28_chicomecoatl-658x1024.jpg" alt="Artículo 5">
+                        <p>Cultura mexica<br>
+                            Periodo postclásico tardío 1325-1521 d. C.<br>
+                            Basalto<br>
+                            71 x 31 x 20.5 cm.<br>
+                            Colección CONACULTA-INAH-MEX</p>
+                            <span class="precio">$100Mxn</span><br>
+                            <button class="agregar-al-carrito">Agregar al carrito</button>
+                    </li>
+                    <li>
+                        <h3>Urna</h3>
+                        <img src="https://www.3museos.com/wp-content/uploads/2015/07/ma_24_pitao-917x1024.jpg" alt="Artículo 6">
+                        <p>Con la representación de Pitao Cozobi, diosa <br>
+                            del maíz<br>
+                            Cultura Zapoteca<br>
+                            Periodo clásico tardío 600-900 d. C.<br>
+                            Arcilla modelada<br>
+                            28 x 26 x 22 cm.<br>
+                            Colección CONACULTA-INAH-MEX</p>
+                            <span class="precio">$100Mxn</span><br>
+                            <button class="agregar-al-carrito">Agregar al carrito</button>
+                    </li>
+                    <li>
+                        <h3>Olla policromada </h3>
+                        <img src="https://www.3museos.com/wp-content/uploads/2015/07/ma_27_policromada-1024x685.jpg" alt="Artículo 7">
+                        <p>Cultura Cholulteca<br>
+                            Periodo postclásico tardío<br>
+                            1325-1521 d. C.<br>
+                            Arcilla modelada, policromada y pulida<br>
+                            35 x 40 x 36 cm.<br>
+                            Colección CONACULTA-INAH-MEX</p>
+                            <span class="precio">$100Mxn</span><br>
+                            <button class="agregar-al-carrito">Agregar al carrito</button>
+                    </li>
+                    <li>
+                        <h3>Figurilla antropomorfa sedente</h3>
+                        <img src="https://www.3museos.com/wp-content/uploads/2015/07/ma_16_sedente-685x1024.jpg" alt="Artículo 8">
+                        <p>Procedente del centro de Veracruz<br>
+                            Periodo clásico<br>
+                            200-900 d. C.<br>
+                            Arcilla modelada y pulida<br>
+                            36 x 27 x 20 cm.<br>
+                            Colección CONACULTA-INAH-MEX</p>
+                            <span class="precio">$100Mxn</span><br>
+                            <button class="agregar-al-carrito">Agregar al carrito</button>
+                    </li>
+                    <li>
+                        <h3>Figura zoomorfa (perro)</h3>
+                        <img src="https://www.3museos.com/wp-content/uploads/2015/07/ma_10_perro-1024x685.jpg" alt="Artículo 9">
+                        <p>Cultura de las Tumbas de Tiro del Occidente <br>
+                            de México <br>
+                            Periodo clásico <br>
+                            200-900 d. C. <br>
+                            Arcilla modelada y pulida <br>
+                            23.5 x 21 x 31 cm. <br>
+                            Colección CONACULTA-INAH-MEX</p>
+                            <span class="precio">$100Mxn</span><br>
+                            <button class="agregar-al-carrito">Agregar al carrito</button>
+                    </li>
+                </ul>
+            </section>
+            
+            <section id="sobre">
+                <div class="sobre-container">
+                    <div class="sobre-texto">
+                        <h2>Quienes somos?</h2>
+                        <div class="parrafo-contenedor">
+                            <p>Somos una empresa que se ha encargado de conservar las tradiciones y culturas 
+                                de diferentes pueblos en México y ofreciéndolas por medio del comercio.<br>
+                                Cada paquete contiene el artículo en cuestión, una historia del mismo, su 
+                                documentación legal y otros pequeños souvenirs.
+                            </p>
+                            <audio id="audio" src="audi.mp3" controls></audio>
+
+                        </div>
+                    </div>
+                    <div class="sobre-video">
+                        <video width="560" height="315" controls>
+                            <source src="videoantiguo.mp4.mp4" type="video/mp4">
+                            Tu navegador no soporta el elemento de video.
+                        </video>
+                    </div>
+                </div>
+            </section>
+            
+            
+            <a name="carrito"></a>
+            <div id="carrito">
+                <h2>Carrito</h2>
+                <ul id="lista-carrito"></ul>
+                <button id="boton-vaciar-carrito">Vaciar Carrito</button>
+                <button id="boton-pagar">Pagar</button>
+            </div>
+
+            
+<div id="formulario-pago" style="display: none;">
+    <h2>Datos de la Tarjeta</h2>
+    <form id="formulario">
+        <input type="text" name="nombre" placeholder="Nombre del titular" required maxlength="10"  required pattern="[A-Za-z\s]+" title="Debe ingresar solo letras y espacios" oninput="this.value = this.value.replace(/[^A-Za-z\s]/g, '');">
+        <input type="text" name="numero" placeholder="Número de la tarjeta" required pattern="\d{16}" title="Debe ingresar 16 dígitos" oninput="validarNumero(this)"  oninput="if(this.value.length > 16) { alert('Debe ingresar 16 dígitos'); this.value = this.value.slice(0, 16); }">
+        <input type="date" name="fecha" placeholder="Fecha de vencimiento (MM/AA)" required>
+        <input type="text" name="cvv" placeholder="CVV" required pattern="\d{3}" title="Debe ingresar 3 dígitos" oninput="validarNumero(this)"  oninput="if(this.value.length > 3) { alert('Debe ingresar 3 dígitos'); this.value = this.value.slice(0, 3); }">
+        <label for="tipoTarjeta">Tipo de Tarjeta:</label>
+        <select id="tipoTarjeta" name="tipoTarjeta">
+            <option value="visa">Visa</option>
+            <option value="mastercard">Mastercard</option>
+            <option value="amex">Amex</option>
+            <option value="otra">Otra</option>
+        </select>
+        <label for="tipoCuenta">Tipo de Cuenta:</label>
+        <select id="tipoCuenta" name="tipoCuenta">
+            <option value="debito">Débito</option>
+            <option value="credito">Crédito</option>
+        </select>
+        <label for="satisfaccion">Seleccione un sexo</label>
+        <input type="radio" id="satisfaccion" name="satisfaccion" value="si">
+        <label for="satisfaccion">Femenino</label>
+        <input type="radio" id="satisfaccionNo" name="satisfaccion" value="no">
+        <label for="satisfaccionNo">Masculino</label>
+        <button type="submit" onclick="confirmarPago()">Confirmar Pago</button>
+        <input type="button" value="Borrar" onclick="resetForm()">
+    </form>
+</div>
+
+<script>
+    function resetForm() {
+        document.getElementById("formulario").reset();
+    }
+    function confirmarPago() {
+        var formulario = document.getElementById("formulario");
+        var camposRequeridos = formulario.querySelectorAll('input[required], select[required]');
+        var todosCamposLlenos = Array.from(camposRequeridos).every(function(campo) {
+            return campo.value.trim()!== "";
+        });
+        if (!todosCamposLlenos) {
+            alert("Por favor, llene todos los datos solicitados.");
+            return; 
+        }
+        alert("Pago realizado con éxito");
+    }
+    function validarNumero(input) {
+var numero = input.value.trim();
+if (!numero.match(/^\d*$/)) {
+alert("Por favor, ingrese solo números.");
+input.value = "";
+}
+}
+
+    </script>
+    
+
+
+
+            <section id="contacto">
+                <h2>Contáctanos</h2>
+                <form action="https://formspree.io/f/mbjnqlel" method="POST">
+                    <input type="text" name="nombre" placeholder="Nombre" required>
+                    <input type="email" name="_replyto" placeholder="Correo electrónico" required>
+                    <textarea name="mensaje" placeholder="Mensaje" required></textarea>
+                    <button type="submit">Enviar</button>
+                    <script>
+                    function Mensaje(){
+                    alert("Se ha enviado tus respuestas");
+                    }
+                </script>
+                </form>
+            </section>
+            <script>
+                var carrito = [];
+            
+                
+                function agregarAlCarrito(nombreArticulo, precio) {
+                    var precioNumerico = parseFloat(precio.replace('$', ''));
+                    var indice = carrito.findIndex(articulo => articulo.nombre === nombreArticulo);
+                    if (indice === -1) {
+                        carrito.push({ nombre: nombreArticulo, precio: precioNumerico, cantidad: 1 });
+                    } else {
+                        carrito[indice].cantidad++;
+                    }
+                    actualizarListaCarrito();
+                }
+            
+                
+                function vaciarCarrito() {
+                    carrito = []; 
+                    actualizarListaCarrito(); 
+                }
+            
+                
+                function calcularSubtotal() {
+                    var subtotal = 0;
+                    carrito.forEach(function(articulo) {
+                        subtotal += articulo.precio * articulo.cantidad;
+                    });
+                    return subtotal;
+                }
+                function calcularIVA() {
+                var subtotal = calcularSubtotal();
+                var iva = subtotal * 0.15; 
+                return iva;
+                }
+                function calcularTotal() {
+                    var subtotal = calcularSubtotal();
+                    var iva = subtotal * 0.15; 
+                    var total= iva+subtotal;
+                    return total;
+                }
+
+                function calcularEXP() {
+                var subtotal = calcularSubtotal();
+                var iva = subtotal * 0.15; 
+                var total = subtotal + iva; 
+
+                var exp = total;
+                exp **= 2; 
+
+                return exp;
+                }
+                function calcularMUL() {
+                var subtotal = calcularSubtotal();
+                var iva = subtotal * 0.15; 
+                var total = subtotal + iva; 
+
+                var mul = total;
+                mul *= 2; 
+
+                return mul;
+                }
+                function calcularRES() {
+                var subtotal = calcularSubtotal();
+                var iva = subtotal * 0.15; 
+                var total = subtotal + iva; 
+                var res1=10000;
+
+                var res = total;
+                res1 -= res; 
+
+                return res1;
+                }
+                function calcularDIV() {
+                var subtotal = calcularSubtotal();
+                var iva = subtotal * 0.15; 
+                var total = subtotal + iva; 
+                var div1=2;
+
+                var div = total;
+                div /= div1; 
+
+                return div;
+                }
+
+            
+                function actualizarListaCarrito() {
+                    var listaCarrito = document.getElementById('lista-carrito');
+                    listaCarrito.innerHTML = ''; 
+                    carrito.forEach(function(articulo) {
+                        var li = document.createElement('li');
+                        li.innerHTML = `${articulo.nombre} (Cantidad: ${articulo.cantidad}, Precio: ${articulo.precio})`;
+                        listaCarrito.appendChild(li);
+                    });
+                    var subtotal = calcularSubtotal();
+                    listaCarrito.innerHTML += `<li>Subtotal: ${subtotal}</li>`;
+
+                    var iva = calcularIVA();
+                    listaCarrito.innerHTML += `<li>IVA: ${iva}</li>`;
+                    
+                    var total = calcularTotal();
+                    listaCarrito.innerHTML += `<li>Total: ${total}</li>`;
+
+                    var exp = calcularEXP();
+                    listaCarrito.innerHTML += `<li>Total al cuadrado: ${exp}</li>`;
+
+                    var res1 = calcularRES();
+                    listaCarrito.innerHTML += `<li>Credito disponible: ${res1}Max</li>`;
+
+                    var div = calcularDIV();
+                    listaCarrito.innerHTML += `<li>Total entre 2: ${div}</li>`;
+                    var mul = calcularMUL();
+                    listaCarrito.innerHTML += `<li>Total multiplicado por 2: ${mul}</li>`;
+
+                }
+            
+                document.addEventListener('DOMContentLoaded', function() {
+                    document.querySelectorAll('.agregar-al-carrito').forEach(function(boton) {
+                        boton.addEventListener('click', function() {
+                            var nombreArticulo = this.parentElement.querySelector('h3').innerText;
+                            var precioArticulo = this.parentElement.querySelector('.precio').innerText;
+                            agregarAlCarrito(nombreArticulo, precioArticulo);
+                        });
+                    });
+                });
+            
+                
+                document.getElementById('boton-vaciar-carrito').addEventListener('click', function() {
+                    vaciarCarrito();
+                });
+            
+                
+                document.getElementById('boton-pagar').addEventListener('click', function() {
+                    document.getElementById('formulario-pago').style.display = 'block';
+                });
+                actualizarListaCarrito();
+            </script>
+            
+            
+            
+        </main>
+        <footer>
+            <h3>Realizado por:</h3>
+            <h5>Figueroa Zavala Jose Manuel y Galaviz Cota Jorge Arturo</h5>
+            <p>© 2024 Mi Empresa. Todos los derechos reservados.</p>
+        </footer>
+        
+    </body>
+</html>
